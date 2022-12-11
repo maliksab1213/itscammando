@@ -1,0 +1,31 @@
+{
+  "name": "fbspam",
+  "version": "1.0.0",
+  "description": "Facebook messenger spam tool by John Lester",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/johnlester-umaru/fbspam.git"
+  },
+  "keywords": [
+    "fbspam",
+    "John",
+    "Lester",
+    "fbspam"
+  ],
+  "author": "John Lester",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/johnlester-umaru/fbspam/issues"
+  },
+  "homepage": "https://github.com/johnlester-umaru/fbspam#readme",
+  "dependencies": {
+    "chalk": "^4.1.2",
+    "fca-unofficial": "^1.3.10",
+    "fs": "^0.0.1-security",
+    "prompt": "^1.3.0"
+  }
+}
