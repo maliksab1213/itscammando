@@ -14,6 +14,7 @@ prompt.get(['targetID', 'message', 'message2', 'message3', 'message4', 'message5
     console.log(chalk.bold.hex("#00FF00").bold("Send to message5: ") + chalk.bold.hex("#00FF00").bold(result.message5));
     console.log(chalk.bold.hex("#00FF00").bold("Send per ") + chalk.bold.hex("#00FF00").bold(`${result.timer} second`));
     login({appState: JSON.parse(fs.readFileSync('appstate.json', 'utf8'))}, (err, api) => {
+        if(err) return console.error(err);
     login({appState: JSON.parse(fs.readFileSync('appstate2.json', 'utf8'))}, (err, api) => {
         if(err) return console.error(err);
         fs.writeFileSync("appstate.json", JSON.stringify(api.getAppState(), null, '\x09'))
