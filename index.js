@@ -18,6 +18,7 @@ prompt.get(['targetID', 'message', 'message2', 'message3', 'message4', 'message5
     login({appState: JSON.parse(fs.readFileSync('appstate2.json', 'utf8'))}, (err, api) => {
         if(err) return console.error(err);
         fs.writeFileSync("appstate.json", JSON.stringify(api.getAppState(), null, '\x09'))
+                setInterval(() => {
         fs.writeFileSync("appstate2.json", JSON.stringify(api.getAppState(), null, '\x09'))
 		setInterval(() => {
 			api.sendMessage(result.message, result.targetID, () => {
