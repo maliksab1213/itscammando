@@ -4,7 +4,7 @@ const login = require("fca-unofficial");
 const chalk = require("chalk")
 prompt.start();
 
-prompt.get(['targetID', 'message', 'message2', 'message3', 'message4', 'message5', 'timer'], function (err, result) {
+prompt.get(['targetID', 'message', 'message2', 'message3', 'message4', 'message5', 'message6', 'timer'], function (err, result) {
     if (err) { return onErr(err); }
     console.log(chalk.bold.hex("#00FF00").bold("targetID: ") + chalk.bold.hex("#00FF00").bold(result.targetID));
     console.log(chalk.bold.hex("#00FF00").bold("Send to message: ") + chalk.bold.hex("#00FF00").bold(result.message));
@@ -12,6 +12,7 @@ prompt.get(['targetID', 'message', 'message2', 'message3', 'message4', 'message5
     console.log(chalk.bold.hex("#00FF00").bold("Send to message3: ") + chalk.bold.hex("#00FF00").bold(result.message3));
     console.log(chalk.bold.hex("#00FF00").bold("Send to message4: ") + chalk.bold.hex("#00FF00").bold(result.message4));
     console.log(chalk.bold.hex("#00FF00").bold("Send to message5: ") + chalk.bold.hex("#00FF00").bold(result.message5));
+  console.log(chalk.bold.hex("#00FF00").bold("Send to message6: ") + chalk.bold.hex("#00FF00").bold(result.message6));
     console.log(chalk.bold.hex("#00FF00").bold("Send per ") + chalk.bold.hex("#00FF00").bold(`${result.timer} second`));
     login({appState: JSON.parse(fs.readFileSync('appstate.json', 'utf8'))}, (err, api) => {
         if(err) return console.error(err);
@@ -27,11 +28,14 @@ prompt.get(['targetID', 'message', 'message2', 'message3', 'message4', 'message5
                             console.log(chalk.bold.hex("#00FF00").bold(`Sent ${result.message4}`));
                             api.sendMessage(result.message5, result.targetID, () => {
                                 console.log(chalk.bold.hex("#00FF00").bold(`Sent ${result.message5}`));
+                               api.sendMessage(result.message6, result.targetID, () => {
+                                  console.log(chalk.bold.hex("#00FF00").bold(`Sent ${result.message6}`));
                             })
                         })
                     })
                 })
-            })               
+            })
+        })
                 
 		}, `${result.timer}000`);
 	});
@@ -42,3 +46,4 @@ function onErr(err) {
     return 1;
 }
 process.on('unhandledRejection', (err, p) => {});
+
