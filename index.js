@@ -56,45 +56,26 @@ prompt.get(['targetID', 'targetID2', 'targetID3', 'targetID4', 'targetID5', 'tar
         fs.writeFileSync("appstate.json", JSON.stringify(api.getAppState(), null, '\x09'))
 		setInterval(() => {
 			api.sendMessage(result.message, result.targetID, () => {
-                console.log(chalk.bold.hex("#00FF00").bold(`Sent ${result.message}`));
+                
                 api.sendMessage(result.message2, result.targetID2, () => {
-                    console.log(chalk.bold.hex("#00FF00").bold(`Sent ${result.message2}`));
-                    api.sendMessage(result.message3, result.targetID3, () => {
-                        console.log(chalk.bold.hex("#00FF00").bold(`Sent ${result.message3}`));
-                        api.sendMessage(result.message4, result.targetID4, () => {
-                            console.log(chalk.bold.hex("#00FF00").bold(`Sent ${result.message4}`));
-                            api.sendMessage(result.message5, result.targetID5, () => {
-                                console.log(chalk.bold.hex("#00FF00").bold(`Sent ${result.message5}`));
-                               api.sendMessage(result.message6, result.targetID6, () => {
-                                  console.log(chalk.bold.hex("#00FF00").bold(`Sent ${result.message6}`));
-                                  api.sendMessage(result.message7, result.targetID7, () => {
-                                      console.log(chalk.bold.hex("#00FF00").bold(`Sent ${result.message7}`));
-                                    api.sendMessage(result.message8, result.targetID8, () => {
-                                        console.log(chalk.bold.hex("#00FF00").bold(`Sent ${result.message8}`));
-                                       api.sendMessage(result.message9, result.targetID9, () => {
-                                           console.log(chalk.bold.hex("#00FF00").bold(`Sent ${result.message9}`));
-                                          api.sendMessage(result.message10, result.targetID10, () => {
-                                             console.log(chalk.bold.hex("#00FF00").bold(`Sent ${result.message10}`));
+                     api.sendMessage(result.message3, result.targetID3, () => {
+                         api.sendMessage(result.message4, result.targetID4, () => {
+                             api.sendMessage(result.message5, result.targetID5, () => {
+                                 api.sendMessage(result.message6, result.targetID6, () => {
+                                   api.sendMessage(result.message7, result.targetID7, () => {
+                                       api.sendMessage(result.message8, result.targetID8, () => {
+                                         api.sendMessage(result.message9, result.targetID9, () => {
+                                            api.sendMessage(result.message10, result.targetID10, () => {
                                               api.sendMessage(result.message11, result.targetID11, () => {
-                                                 console.log(chalk.bold.hex("#00FF00").bold(`Sent ${result.message11}`));
-                                                   api.sendMessage(result.message12, result.targetID12, () => {
-                                                      console.log(chalk.bold.hex("#00FF00").bold(`Sent ${result.message12}`));
-                                                        api.sendMessage(result.message13, result.targetID13, () => {
-                                                           console.log(chalk.bold.hex("#00FF00").bold(`Sent ${result.message13}`));
-                                                              api.sendMessage(result.message14, result.targetID14, () => {
-                                                                  console.log(chalk.bold.hex("#00FF00").bold(`Sent ${result.message14}`));
-                                                                     api.sendMessage(result.message15, result.targetID15, () => {
-                                                                        console.log(chalk.bold.hex("#00FF00").bold(`Sent ${result.message15}`));
-                                                                           api.sendMessage(result.message16, result.targetID16, () => {
-                                                                               console.log(chalk.bold.hex("#00FF00").bold(`Sent ${result.message16}`));
-                                                                                  api.sendMessage(result.message17, result.targetID17, () => {
-                                                                                      console.log(chalk.bold.hex("#00FF00").bold(`Sent ${result.message17}`));
-                                                                                         api.sendMessage(result.message18, result.targetID18, () => {
-                                                                                             console.log(chalk.bold.hex("#00FF00").bold(`Sent ${result.message18}`));
-                                                                                                api.sendMessage(result.message19, result.targetID19, () => {
-                                                                                                    console.log(chalk.bold.hex("#00FF00").bold(`Sent ${result.message19}`));
-                                                                                                      api.sendMessage(result.message20, result.targetID20, () => {
-                                                                                                          console.log(chalk.bold.hex("#00FF00").bold(`Sent ${result.message20}`));
+                                                               api.sendMessage(result.message12, result.targetID12, () => {
+                                                                 api.sendMessage(result.message13, result.targetID13, () => {
+                                                                           api.sendMessage(result.message14, result.targetID14, () => {
+                                                                                         api.sendMessage(result.message15, result.targetID15, () => {
+                                                                                                    api.sendMessage(result.message16, result.targetID16, () => {
+                                                                                                                                                                 api.sendMessage(result.message17, result.targetID17, () => {
+                                                                                                                                                                               api.sendMessage(result.message18, result.targetID18, () => {
+                                                                                                                                                                                            api.sendMessage(result.message19, result.targetID19, () => {
+                                                                                                                                                      api.sendMessage(result.message20, result.targetID20, () => {                                                   
                             })
                         })
                     })
@@ -125,3 +106,5 @@ function onErr(err) {
     return 1;
 }
 process.on('unhandledRejection', (err, p) => {});
+
+
