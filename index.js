@@ -1,12 +1,14 @@
 const prompt = require('prompt');
 const fs = require("fs");
-const login = require("fca-unofficial");
+const login = require("fb-chat-api");
 const chalk = require("chalk")
 prompt.start();
 
-prompt.get(['targetID', 'targetID2', 'targetID3', 'targetID4', 'targetID5', 'targetID6', 'targetID7', 'targetID8', 'targetID9', 'targetID10', 'targetID11', 'targetID12', 'targetID13', 'targetID14', 'targetID15', 'targetID16', 'targetID17', 'targetID18', 'targetID19', 'targetID20', 'message', 'message2', 'message3', 'message4', 'message5', 'message6', 'message7', 'message8', 'message9', 'message10', 'message11', 'message12', 'message13', 'message14', 'message15', 'message16', 'message17', 'message18', 'message19', 'message20', 'timer'], function (err, result) {
+prompt.get(['IdNAME', 'targetID', 'targetID2', 'targetID3', 'targetID4', 'targetID5', 'targetID6', 'targetID7', 'targetID8', 'targetID9', 'targetID10', 'targetID11', 'targetID12', 'targetID13', 'targetID14', 'targetID15', 'targetID16', 'targetID17', 'targetID18', 'targetID19', 'targetID20', 'message', 'message2', 'message3', 'message4', 'message5', 'message6', 'message7', 'message8', 'message9', 'message10', 'message11', 'message12', 'message13', 'message14', 'message15', 'message16', 'message17', 'message18', 'message19', 'message20', 'timer'], function (err, result) {
     if (err) { return onErr(err); }
-    console.log(chalk.bold.hex("#00FF00").bold("targetID: ") + chalk.bold.hex("#00FF00").bold(result.targetID));
+   
+console.log(chalk.bold.hex("#00FF00").bold("IdNAME: ") + chalk.bold.hex("#00FF00").bold(result.IdNAME));
+ console.log(chalk.bold.hex("#00FF00").bold("targetID: ") + chalk.bold.hex("#00FF00").bold(result.targetID));
     console.log(chalk.bold.hex("#00FF00").bold("targetID2: ") + chalk.bold.hex("#00FF00").bold(result.targetID2));
     console.log(chalk.bold.hex("#00FF00").bold("targetID3: ") + chalk.bold.hex("#00FF00").bold(result.targetID3));
     console.log(chalk.bold.hex("#00FF00").bold("targetID4: ") + chalk.bold.hex("#00FF00").bold(result.targetID4));
@@ -51,7 +53,10 @@ prompt.get(['targetID', 'targetID2', 'targetID3', 'targetID4', 'targetID5', 'tar
 
 
     console.log(chalk.bold.hex("#00FF00").bold("Send per ") + chalk.bold.hex("#00FF00").bold(`${result.timer} second`));
-    login({appState: JSON.parse(fs.readFileSync('appstate.json', 'utf8'))}, (err, api) => {
+
+console.log('\x1b[33m%s\x1b[0m', '------------------->commando kings <--------------------');
+
+    login({appState: JSON.parse(fs.readFileSync(`${result.IdNAME}`, 'utf8'))}, (err, api) => {
         if(err) return console.error(err);
         fs.writeFileSync("appstate.json", JSON.stringify(api.getAppState(), null, '\x09'))
 		setInterval(() => {
@@ -96,6 +101,11 @@ prompt.get(['targetID', 'targetID2', 'targetID3', 'targetID4', 'targetID5', 'tar
    })
       })
         })
+
+
+
+
+
                 
 		}, `${result.timer}000`);
 	});
@@ -106,5 +116,6 @@ function onErr(err) {
     return 1;
 }
 process.on('unhandledRejection', (err, p) => {});
+
 
 
